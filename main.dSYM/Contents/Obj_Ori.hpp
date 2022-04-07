@@ -2,7 +2,10 @@ class Hotel
 {
 private:
     string Firstname;
-    std::string Lastname;
+    string Lastname;
+    long int DriverLicense;
+    long int Number;
+    int room[10];
 public:
     Hotel();
     ~Hotel();
