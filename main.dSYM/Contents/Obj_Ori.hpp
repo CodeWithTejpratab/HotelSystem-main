@@ -2,7 +2,7 @@ class Hotel
 {
 private:
     string Firstname;
-    string Lastname;
+    std::string Lastname;
 public:
     Hotel();
     ~Hotel();
