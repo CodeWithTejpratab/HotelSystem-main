@@ -5,7 +5,6 @@ private:
     string Lastname;
     long int DriverLicense;
     long int Number;
-    int room[10];
     double price;
 public:
     Hotel();
@@ -21,6 +20,9 @@ Hotel::Hotel()
     price = 89.78;
 }
 
+/*
 Hotel::~Hotel()
 {
+    delete [] room;
 }
+*/
