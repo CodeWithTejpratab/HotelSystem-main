@@ -3,6 +3,7 @@ void program(){
     cout<<"Welcome to Booking.com"<<endl;
     int roomsize;
     int loop = 0;
+    int counter=0;
     int const room[10]={1,1,1,2,2,2,3,3,3,1};
     cout << "Seclect the number of beds"<<endl<<"*note*- We only have rooms of max 3 beds"<<endl;
     cout << "Enter 1 = 1 bedroom"<<endl<< "Enter 2 = 2 bedroom"<<endl<< "Enter 1 = 1 bedroom"<<endl;
@@ -16,6 +17,7 @@ void program(){
         {
             if(*(room+i)==1){
             cout << "Room "<<i+1<<" -Number of beds: "<<room[i]<<endl;
+            counter++;
             }
         }
         break;
@@ -27,6 +29,7 @@ void program(){
         {
             if(*(room+i)==2){
             cout << "Room "<<i+1<<" -Number of beds: "<<room[i]<<endl;
+            counter++;
             }
         }  
         break;
@@ -38,6 +41,7 @@ void program(){
         {
             if(*(room+i)==3){
             cout << "Room "<<i+1<<" -Number of beds: "<<room[i]<<endl;
+            counter++;
             }
         }
         break;
