@@ -6,9 +6,10 @@ void program(){
     int counter=0;
     int const room[10]={1,1,1,2,2,2,3,3,3,1};
     cout << "Seclect the number of beds"<<endl<<"*note*- We only have rooms of max 3 beds"<<endl;
-    cout << "Enter 1 = 1 bedroom"<<endl<< "Enter 2 = 2 bedroom"<<endl<< "Enter 1 = 1 bedroom"<<endl;
+    cout << "Enter 1 = 1 bedroom"<<endl<< "Enter 2 = 2 bedroom"<<endl<< "Enter 3 = 3 bedroom"<<endl;
     cout << "Input: ";
     cin >> roomsize;
+    int input;
     while (loop!=1){
     if (roomsize == 1){
         loop =1;
@@ -20,6 +21,10 @@ void program(){
             counter++;
             }
         }
+        cout << "Select the room you would like to book"<<endl;
+        cout << "input: ";
+        cin >> input;
+        cout <<"Room " <<input<<" -Number of beds: "<<room[input-1]<<endl<<"Booked sucessful"<<endl;
         break;
     }
     else if(roomsize == 2){
@@ -32,6 +37,10 @@ void program(){
             counter++;
             }
         }  
+        cout << "Select the room you would like to book"<<endl;
+        cout << "input: ";
+        cin >> input;
+        cout <<"Room " <<input<<" -Number of beds: "<<room[input-1]<<endl<<"Booked sucessful"<<endl;
         break;
     }
     else if (roomsize == 3){
@@ -44,6 +53,10 @@ void program(){
             counter++;
             }
         }
+        cout << "Select the room you would like to book"<<endl;
+        cout << "input: ";
+        cin >> input;
+        cout <<"Room " <<input<<" -Number of beds: "<<room[input-1]<<endl<<"Booked sucessful"<<endl;
         break;
     }
     else {

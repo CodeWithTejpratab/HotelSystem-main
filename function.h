@@ -8,6 +8,22 @@ private:
     double price;
 public:
     Hotel();
+    string getfirstname(){
+        return Firstname;
+    }
+    string getlastname(){
+        return Lastname;
+    }
+    int getdriverlicense(){
+        return DriverLicense;
+    }
+    int getnumber(){
+        return Number;
+    }
+    double getprice(){
+        return price;
+    }
+
 };
 
 Hotel::Hotel(){
