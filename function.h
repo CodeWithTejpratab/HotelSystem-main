@@ -23,7 +23,6 @@ public:
     double getprice(){
         return price;
     }
-
 };
 
 Hotel::Hotel(){
