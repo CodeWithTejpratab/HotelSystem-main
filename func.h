@@ -6,6 +6,9 @@ hotel_system::hotel_system(){
     {
         room[i] = rand()%3+1;
     }
+    price1 = 89.98;
+    price2 = 129.77;
+    price3 = 169.99;
 }
 void hotel_system::printroom(){
     for (int i = 0; i < 10; i++)
@@ -18,6 +21,10 @@ void hotel_system::printroom(){
 hotel_system::~hotel_system(){
     delete [] room;
 }
+int hotel_system::getroom(int i){
+    int size = i;
+    return room[size];
+}
 
 //Client class function
 client::client(){
@@ -25,4 +32,14 @@ client::client(){
     lastName = "x";
     ID = NULL;
     Number = NULL;
+}
+
+//service class function
+service::service(){
+    roomService = 0;
+    publicService = 0;
+    poolService = 0;
+    pricePool = 20;
+    pricePublic = 50;
+    priceRoom = 35;
 }
