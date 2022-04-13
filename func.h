@@ -32,6 +32,7 @@ client::client(){
     lastName = "x";
     ID = NULL;
     Number = NULL;
+    nights = NULL;
 }
 
 //service class function

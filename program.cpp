@@ -1,6 +1,6 @@
 void program();
 void program(){
-    hotel_system a;
+    service a;
     a.printroom();
     cout << a.getroom(1)<<endl;
 }
