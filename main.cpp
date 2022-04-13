@@ -6,5 +6,6 @@ using namespace std;
 #include "func.h"
 #include "program.cpp"
 int main(){
+program();
 return 0;
 }
