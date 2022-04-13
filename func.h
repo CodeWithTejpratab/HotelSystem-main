@@ -1,3 +1,4 @@
+//hotel_system class function
 hotel_system::hotel_system(){
     room = new int[10];
     srand(time(NULL));
@@ -16,4 +17,12 @@ void hotel_system::printroom(){
 
 hotel_system::~hotel_system(){
     delete [] room;
+}
+
+//Client class function
+client::client(){
+    firstName = "x";
+    lastName = "x";
+    ID = NULL;
+    Number = NULL;
 }
