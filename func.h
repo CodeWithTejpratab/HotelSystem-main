@@ -41,7 +41,7 @@ client::client(){
     lastName = "x";
     ID = NULL;
     Number = NULL;
-    nights = NULL;
+    nights = 0;
 }
 void client::setfirstName(string x){
     firstName = x;
