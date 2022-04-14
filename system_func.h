@@ -1,3 +1,4 @@
+#include "system.h"
 //hotel_system class function
 hotel_system::hotel_system(){
     room = new int[10];

@@ -1,3 +1,4 @@
+#include "calculation_func.h"
 void program();
 void program(){
     service hotel;
@@ -32,10 +33,12 @@ void program(){
         hotel.setnights(night);
         cout <<"Room " <<input<<" -Number of beds: "<<hotel.getroom(input-1)<<endl;
         cout << "Cost: $"<< hotel.getnights()*hotel.getprice1()<<" for "<<night<<" Nights"<<endl;
+        validate(hotel);
         cout << "would you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
         if (cbooked == 'Y' || cbooked =='y'){
         cout<<"Booked sucessful"<<endl;
+        return program();
         }
         else if(cbooked == 'N' || cbooked == 'n'){
         cout<<"Canceled"<<endl;
@@ -50,22 +53,28 @@ void program(){
     }
     else if(roomsize == 2){
         loop =1;
-        /*
-        cout<<endl<<"Showing aviable rooms with 2 bedroom"<<endl; 
-        for (int i = 0; i < 10; i++)
+        cout<<endl<<"Showing aviable rooms with 2 bedroom"<<endl;
+         for (int i = 0; i < 10; i++)
         {
-            if(*(room+i)==2){
-            cout << "Room "<<i+1<<" -Number of beds: "<<room[i]<<endl;
+            if(hotel.getroom(i)==2){
+            cout << "Room "<<i+1<<" -Number of beds: "<<hotel.getroom(i)<<endl;
             }
-        }  
+        }
+        
         cout << "Select the room you would like to book"<<endl;
         cout << "input: ";
         cin >> input;
-        cout <<"Room " <<input<<" -Number of beds: "<<room[input-1]<<endl;
+        cout << "How many nights will you be staying: ";
+        cin >> night;
+        hotel.setnights(night);
+        cout <<"Room " <<input<<" -Number of beds: "<<hotel.getroom(input-1)<<endl;
+        cout << "Cost: $"<< hotel.getnights()*hotel.getprice1()<<" for "<<night<<" Nights"<<endl;
+        validate(hotel);
         cout << "would you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
         if (cbooked == 'Y' || cbooked =='y'){
         cout<<"Booked sucessful"<<endl;
+        return program();
         }
         else if(cbooked == 'N' || cbooked == 'n'){
         cout<<"Canceled"<<endl;
@@ -75,27 +84,32 @@ void program(){
         cout << "error, try again"<<endl;
         cout << "would you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
-        */
+        }
         break;
     }
     else if (roomsize == 3){
         loop =1;
-        /*
         cout<<endl<<"Showing aviable rooms with 3 bedroom"<<endl;
-        for (int i = 0; i < 10; i++)
+         for (int i = 0; i < 10; i++)
         {
-            if(*(room+i)==3){
-            cout << "Room "<<i+1<<" -Number of beds: "<<room[i]<<endl;
+            if(hotel.getroom(i)==3){
+            cout << "Room "<<i+1<<" -Number of beds: "<<hotel.getroom(i)<<endl;
             }
         }
         cout << "Select the room you would like to book"<<endl;
         cout << "input: ";
         cin >> input;
-        cout <<"Room " <<input<<" -Number of beds: "<<room[input-1]<<endl;
+        cout << "How many nights will you be staying: ";
+        cin >> night;
+        hotel.setnights(night);
+        cout <<"Room " <<input<<" -Number of beds: "<<hotel.getroom(input-1)<<endl;
+        cout << "Cost: $"<< hotel.getnights()*hotel.getprice1()<<" for "<<night<<" Nights"<<endl;
+        validate(hotel);
         cout << "would you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
         if (cbooked == 'Y' || cbooked =='y'){
         cout<<"Booked sucessful"<<endl;
+        return program();
         }
         else if(cbooked == 'N' || cbooked == 'n'){
         cout<<"Canceled"<<endl;
@@ -106,7 +120,6 @@ void program(){
         cout << "would you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
         }
-        */
         break;
     }
     else {
