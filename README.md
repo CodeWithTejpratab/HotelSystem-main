@@ -1,2 +1,2 @@
 # HotelSystem
-Optional Homework for CMPT 102 
+Optional Homework for CMPT 102 class
