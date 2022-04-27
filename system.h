@@ -11,13 +11,14 @@ double getprice2();
 double getprice3();
 };
 
-class client: public hotel_system{
+class client{
 string firstName;
 string lastName;
 long int ID;
 long int Number;
 int nights;
 public:
+friend class service;
 client();
 void setfirstName(string);
 void setlastName(string);
@@ -31,12 +32,13 @@ int getNumber();
 int getnights();
 };
 
-class service: public client{
+class service: public hotel_system{
     bool roomService;
     bool poolService;
     bool publicService;
     double priceRoom, pricePool, pricePublic;
     public:
+    friend class client;
     service();
     bool getroomservice();
     bool getpoolservice();

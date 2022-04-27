@@ -1,6 +1,7 @@
 #include "system_func.h"
-void validate(service&);
-void validate(service& x){
+service validate();
+service validate(){
+service x;
 string fname, lname;
 long int ID, Number;
 cout << "Enter you first name: ";
@@ -16,10 +17,22 @@ x.setlastName(lname);
 x.setID(ID);
 x.setNumber(Number);
 cout<<endl;
+return x;
 }
 
-void bookroom(service&);
-void bookroom(service& hotel){
+void createclient(service&, int&);
+void createclient(service& x, int& user){
+int counter = 0;
+x = new service[10];
+if (user==1){
+x[counter]=validate();
+counter++;
+}
+}
+
+
+void bookroom(service&, int&);
+void bookroom(service& hotel, int& user){
     int roomsize;
     int loop = 0;
     int night;
@@ -47,16 +60,16 @@ void bookroom(service& hotel){
         hotel.setnights(night);
         cout <<"\n\nRoom " <<input<<" -Number of beds: "<<hotel.getroom(input-1)<<endl;
         cout << "Cost: $"<< hotel.getnights()*hotel.getprice1()<<" for "<<night<<" Nights\ny"<<endl;
-        validate(hotel);
+        createclient(hotel, user);
         cout << "\nwould you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
         if (cbooked == 'Y' || cbooked =='y'){
         cout<<"Booked sucessful"<<endl;
-        return bookroom(hotel);
+        return bookroom(hotel, user);
         }
         else if(cbooked == 'N' || cbooked == 'n'){
         cout<<"Canceled"<<endl;
-        return bookroom(hotel);
+        return bookroom(hotel, user);
         }
         else {
         cout << "error, try again"<<endl;
@@ -83,16 +96,16 @@ void bookroom(service& hotel){
         hotel.setnights(night);
         cout <<"Room " <<input<<" -Number of beds: "<<hotel.getroom(input-1)<<endl;
         cout << "Cost: $"<< hotel.getnights()*hotel.getprice1()<<" for "<<night<<" Nights"<<endl;
-        validate(hotel);
+        createclient(hotel, user);
         cout << "would you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
         if (cbooked == 'Y' || cbooked =='y'){
         cout<<"Booked sucessful"<<endl;
-        return bookroom(hotel);
+        return bookroom(hotel, user);
         }
         else if(cbooked == 'N' || cbooked == 'n'){
         cout<<"Canceled"<<endl;
-        return bookroom(hotel);
+        return bookroom(hotel, user);
         }
         else {
         cout << "error, try again"<<endl;
@@ -118,16 +131,16 @@ void bookroom(service& hotel){
         hotel.setnights(night);
         cout <<"Room " <<input<<" -Number of beds: "<<hotel.getroom(input-1)<<endl;
         cout << "Cost: $"<< hotel.getnights()*hotel.getprice1()<<" for "<<night<<" Nights"<<endl;
-        validate(hotel);
+        createclient(hotel, user);
         cout << "would you like to confrom youe selection Y/N"<<endl<<"Input: ";
         cin >> cbooked;
         if (cbooked == 'Y' || cbooked =='y'){
         cout<<"Booked sucessful"<<endl;
-        return bookroom(hotel);
+        return bookroom(hotel, user);
         }
         else if(cbooked == 'N' || cbooked == 'n'){
         cout<<"Canceled"<<endl;
-        return bookroom(hotel);
+        return bookroom(hotel, user);
         }
         else {
         cout << "error, try again"<<endl;
@@ -142,4 +155,21 @@ void bookroom(service& hotel){
         cin >> roomsize;
     }
  }
+}
+
+
+void checkout(service&);
+void checkout(service& hotel){
+int roomNumber;
+long int phone;
+cout<<"what is your room number: ";
+cin>>roomNumber;
+cout<<"what is your phone number: ";
+cin>>phone;
+if((roomNumber==hotel.getroom(roomNumber))&&(phone==hotel.getNumber())){
+cout<<"checked-out sucessful"<<endl;
+}
+else
+cout << "error, try again"<<endl;
+return checkout(hotel);
 }

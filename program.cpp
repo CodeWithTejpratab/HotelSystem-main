@@ -4,6 +4,7 @@ void program(){
     service hotel;
     int userinput;
     hotel.printroom();
+    cout<<"\n============================system online============================\n"<<endl;
     cout<<endl;
     cout<<"Welcome to BookHotel.com"<<endl;
     cout<<"1) book a room"<<endl;
@@ -11,10 +12,10 @@ void program(){
     cout<<"input: ";
     cin>>userinput;
     if(userinput==1){
-    bookroom(hotel);
+    bookroom(hotel, userinput);
     }
-    else if(userinput ==2){
-
+    else if(userinput==2){
+    checkout(hotel);
     }
     else 
     cout<<"invalid input, try again"<<endl;
