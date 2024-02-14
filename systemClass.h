@@ -1,4 +1,6 @@
+#include "Wrapper.hpp"
 #define CLASSES
+
 class hotel_system{
     int* room;
     double price1, price2, price3;
@@ -13,22 +15,22 @@ public:
 };
 
 class client{
-    string firstName;
-    string lastName;
+    std::string firstName;
+    std::string lastName;
     long int ID;
     long int Number;
     int nights;
 
 public:
-    friend class service;
+    //friend class service;
     client();
-    void setfirstName(string);
-    void setlastName(string);
+    void setfirstName(std::string);
+    void setlastName(std::string);
     void setID(long int);
     void setNumber(long int);
     void setnights(int);
-    string getfirstname();
-    string getlastname();
+    std::string getfirstname();
+    std::string getlastname();
     int getID();
     int getNumber();
     int getnights();
@@ -41,7 +43,7 @@ class service : public hotel_system, public client{
     double priceRoom, pricePool, pricePublic;
 
 public:
-    friend class client;
+    //friend class client;
     service();
     bool getroomservice();
     bool getpoolservice();

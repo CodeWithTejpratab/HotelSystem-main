@@ -1,16 +1,18 @@
-#include "calculation_func.h"
+#include "components.h"
+#ifdef SYSTEM_READY
+
 void program();
 void program(){
     service hotel;
     int userinput;
     hotel.printroom();
-    cout<<"\n============================system online============================\n"<<endl;
-    cout<<endl;
-    cout<<"Welcome to BookHotel.com"<<endl;
-    cout<<"1) book a room"<<endl;
-    cout<<"2) Checkout of room"<<endl;
-    cout<<"input: ";
-    cin>>userinput;
+    std::cout<<"\n============================system online============================\n"<<endl;
+    std::cout<<endl;
+    std::cout<<"Welcome to BookHotel.com"<<endl;
+    std::cout<<"1) book a room"<<endl;
+    std::cout<<"2) Checkout of room"<<endl;
+    std::cout<<"input: ";
+    std::cin>>userinput;
     if(userinput==1){
     bookroom(hotel, userinput);
     }
@@ -18,6 +20,8 @@ void program(){
     checkout(hotel);
     }
     else 
-    cout<<"invalid input, try again"<<endl;
+    std::cout<<"invalid input, try again"<<endl;
     return program();
 }
+
+#endif
