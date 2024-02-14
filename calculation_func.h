@@ -1,4 +1,8 @@
 #include "system_func.h"
+#ifndef CLASSES
+#include "system.h"
+#endif
+
 service validate();
 service validate(){
 service x;

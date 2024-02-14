@@ -1,10 +1,11 @@
+#ifndef CLASSES
 #include "system.h"
+#endif
 //hotel_system class function
 hotel_system::hotel_system(){
     room = new int[10];
     srand(time(NULL));
-    for (int i = 0; i < 10; i++)
-    {
+    for (int i = 0; i < 10; i++){
         room[i] = rand()%3+1;
     }
     price1 = 89.98;
@@ -12,8 +13,7 @@ hotel_system::hotel_system(){
     price3 = 169.99;
 }
 void hotel_system::printroom(){
-    for (int i = 0; i < 10; i++)
-    {
+    for (int i = 0; i < 10; i++){
         cout << room[i]<< " ";
     }
     cout<<endl;
@@ -80,9 +80,9 @@ service::service(){
     roomService = 0;
     publicService = 0;
     poolService = 0;
-    pricePool = 20;
-    pricePublic = 50;
-    priceRoom = 35;
+    pricePool = 30;
+    pricePublic = 55;
+    priceRoom = 45;
 }
 
     bool service::getroomservice(){

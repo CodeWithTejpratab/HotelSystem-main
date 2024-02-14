@@ -1,3 +1,4 @@
+#define CLASSES
 class hotel_system {
 int* room;
 double price1, price2, price3;
@@ -36,7 +37,7 @@ class service: public hotel_system{
     bool roomService;
     bool poolService;
     bool publicService;
-    double priceRoom, pricePool, pricePublic;
+    const double priceRoom, pricePool, pricePublic;
     public:
     friend class client;
     service();
