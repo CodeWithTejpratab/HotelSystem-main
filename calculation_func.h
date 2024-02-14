@@ -5,7 +5,7 @@
 
 service validate();
 service validate(){
-service x;
+service* x;
 string fname, lname;
 long int ID, Number;
 cout << "Enter you first name: ";
@@ -27,7 +27,7 @@ return x;
 void createclient(service&, int&);
 void createclient(service& x, int& user){
 int counter = 0;
-x = new service[10];
+*x = new service[10];
 if (user==1){
 x[counter]=validate();
 counter++;
