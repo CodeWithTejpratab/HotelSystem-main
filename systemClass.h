@@ -8,9 +8,10 @@ class Hotel_system: public Service{
 
 public:
     Hotel_system();
-    void printroom();
+    //void printroom();
     //~hotel_system(); //No destructors needed 
-    bool getroom(int);
+    std::array<std::string, 2> getRoomInfo(int&);
+    void resetRoom(int&);
     double getprice1();
     double getprice2();
     friend class Client;
