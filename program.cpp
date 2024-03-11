@@ -1,27 +1,37 @@
-#include "components.h"
+#include "components.hpp"
 #ifdef SYSTEM_READY
 
-void program();
 void program(){
-    service hotel;
     int userinput;
-    hotel.printroom();
-    std::cout<<"\n============================system online============================\n"<<endl;
-    std::cout<<endl;
-    std::cout<<"Welcome to BookHotel.com"<<endl;
-    std::cout<<"1) book a room"<<endl;
-    std::cout<<"2) Checkout of room"<<endl;
+    std::cout<<"\n============================system online============================\n"<<std::endl;
+    std::cout<<std::endl;
+    std::cout<<"Welcome to BookHotel.com"<<std::endl;
+    std::cout<<"1) book a room"<<std::endl;
+    std::cout<<"2) Checkout of room"<<std::endl;
     std::cout<<"input: ";
     std::cin>>userinput;
     if(userinput==1){
-    bookroom(hotel, userinput);
+        int roomSize, nights;
+        std::string fullName;
+        std::cout<<"\n\nHello! and welcome!\nWe have room of size 1 bed and 2 bed only"<<std::endl;
+        std::cout<<"Enter your full name: ";
+        std::cin>>fullName;
+        std::cout<<"What size room would you like 1 or 2 bedroom: "; 
+        std::cin>>roomSize;
+        std::cout<<"How many nights do you want to stay: "; 
+        std::cin>>nights;
+        if(bookRoom(roomSize, nights, fullName) == -1){
+            std::cout<<"\n+++++++++++++++++++++++\nSorry, we have no available rooms right now"<<std::endl;
+        }
+        program();
     }
     else if(userinput==2){
-    checkout(hotel);
+    
     }
-    else 
-    std::cout<<"invalid input, try again"<<endl;
-    return program();
+    else {
+        std::cout<<"invalid input, try again"<<std::endl;
+        return program();
+    }
 }
-
+    
 #endif
