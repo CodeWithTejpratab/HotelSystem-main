@@ -50,6 +50,7 @@ Client::        Client(std::string name, int roomNumber, int nights){
 void Client::       setFullName(std::string name){
     this->fullname          = name; 
 }
+
 void Client::       setRoomNumber(int roomNumber){
     this->roomNumber        = roomNumber;
 }
@@ -92,3 +93,54 @@ bool searchClient(Client* head, std::string name){
     }
     return 0;
 }
+//
+//
+//
+//Service Class function define here 
+ Service::          Service(){
+    for(int i=0; i<10; i++){
+        this->roomService[i]        = 0;
+        this->poolService[i]        = 0;
+        this->publicService[i]      = 0;
+    }
+    this->priceRoomService = this->pricePool = this->pricePublicService        = 20;
+ }
+
+bool Service::      getRoomService(int index){
+    return this->roomService[index];
+}
+
+bool Service::      getPoolService(int index){
+    return this->poolService[index];
+}
+
+bool Service::      getPublicService(int index){
+    return this->publicService[index];
+}
+
+double Service::        getPriceRoom(){
+    return this->priceRoomService;
+}
+
+double Service::        getPricePool(){
+    return this->pricePool;
+}
+
+double Service::        getPricePublic(){
+    return this->pricePublicService;
+}
+
+void Service::          setRoomService(int index){
+    this->roomService[index]        = 1;
+}
+
+void Service::          setPoolService(int index){
+    this->poolService[index]        = 1;
+}
+
+void Service::          setPublicService(int index){
+    this->publicService[index]        = 1;
+}
+//
+//
+//
