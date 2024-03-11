@@ -1,9 +1,9 @@
-#include <iostream>
-#include <string>
-#include <ctime>
-using namespace std;
 #include "program.cpp"
+#ifndef DEPENDENCES
+#include "Wrapper.hpp"
+#endif
+
 int main(){
-program();
+    program();
 return 0;
 }
