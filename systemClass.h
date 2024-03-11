@@ -8,30 +8,38 @@ class Hotel_system: public Service{
 
 public:
     Hotel_system();
+    //
     //void printroom();
+    //
     //~hotel_system(); //No destructors needed 
-    std::array<std::string, 2> getRoomInfo(int&);
+    //
+    std::array<std::string, 2> getRoomInfo(int&); //returns an array of strings size 2
+    //
     void resetRoom(int&);
+    //
     double getprice1();
+    //
     double getprice2();
+    //
     friend class Client;
+    //
 };
-
+//
+//
+// linklist of clients
 class Client{
-    std::string firstName;
-    std::string lastName;
+    std::string fullname;
     int roomNumber;
     int nights;
 
 public:
+    Client* next;
     friend class Hotel_system;
-    Client();
-    void setfirstName(std::string);
-    void setlastName(std::string);
-    void setRoomNumber(long int);
+    Client(std::string name, int roomNubmber, int nights);
+    void setFullName(std::string);
+    void setRoomNumber(int);
     void setnights(int);
-    std::string getfirstname();
-    std::string getlastname();
+    std::string getFullname();
     int getRoomNumber();
     int getnights();
 };
