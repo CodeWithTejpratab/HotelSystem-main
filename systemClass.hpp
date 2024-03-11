@@ -1,5 +1,26 @@
-#include "wrapper.hpp"
+#include "Wrapper.hpp"
 #define CLASSES
+
+class Service {
+    bool roomService[10];
+    bool poolService[10];
+    bool publicService[10];
+    double priceRoomService, pricePool, pricePublicService;
+
+public:
+    //friend class client;
+    Service();
+    bool getRoomService(int);
+    bool getPoolService(int);
+    bool getPublicService(int);
+    double getPriceRoom();
+    double getPricePool();
+    double getPricePublic();
+    void setRoomService(int);
+    void setPoolService(int);
+    void setPublicService(int);
+    void resetService(int);
+};
 
 class Hotel_system: public Service{
     bool room[10];
@@ -14,6 +35,8 @@ public:
     //~hotel_system(); //No destructors needed 
     //
     std::array<std::string, 2> getRoomInfo(int&); //returns an array of strings size 2
+    //
+    void setRoom(int);
     //
     void resetRoom(int&);
     //
@@ -44,22 +67,4 @@ public:
     int getnights();
 };
 
-class Service {
-    bool roomService[10];
-    bool poolService[10];
-    bool publicService[10];
-    double priceRoomService, pricePool, pricePublicService;
 
-public:
-    //friend class client;
-    Service();
-    bool getRoomService(int);
-    bool getPoolService(int);
-    bool getPublicService(int);
-    double getPriceRoom();
-    double getPricePool();
-    double getPricePublic();
-    void setRoomService(int);
-    void setPoolService(int);
-    void setPublicService(int);
-};

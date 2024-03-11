@@ -1,5 +1,5 @@
 #ifndef CLASSES
-#include "systemClass.h"
+#include "systemClass.hpp"
 #endif
 
 #define SYSTEM_READY
@@ -11,7 +11,7 @@
 Hotel_system::      Hotel_system(){//default constructor define 
     for(int i = 0; i < 10; i++){
         room[i]             = 0;
-        roomSize[i]         = rand() % 3 + 1; // room bed size 1-3
+        roomSize[i]         = rand() % 2 + 1; // room bed size 1-2
     }
     price1                  = 80;
     price2                  = 100;
@@ -34,6 +34,10 @@ double Hotel_system::   getprice1(){
 
 double Hotel_system::   getprice2(){
     return price2;
+}
+
+void Hotel_system::     setRoom(int index){
+    this->room[index]       = 1;
 }
 //
 //
@@ -140,6 +144,12 @@ void Service::          setPoolService(int index){
 
 void Service::          setPublicService(int index){
     this->publicService[index]        = 1;
+}
+
+void Service::          resetService(int index){
+    this->roomService[index]        = 0;
+    this->poolService[index]        = 0;
+    this->publicService[index]       = 0;
 }
 //
 //
