@@ -1,6 +1,26 @@
 #include "components.hpp"
 #ifdef SYSTEM_READY
 
+void setServiceForRoom(int index){
+    char input;
+    std::cout<<"\n-+===========+-\n"<<std::endl;
+    std::cout<<"Would you like to add room service y/n"<<std::endl;
+    std::cin>>input;
+    if(input == 'y'){
+        Hotel.setRoomService(index);
+    }
+    std::cout<<"Would you like to add pool service y/n"<<std::endl;
+    std::cin>>input;
+    if(input == 'y'){
+        Hotel.setPoolService(index);
+    }
+    std::cout<<"Would you like to add public service y/n"<<std::endl;
+    std::cin>>input;
+    if(input == 'y'){
+        Hotel.setPublicService(index);
+    }
+}
+
 void program(){
     int userinput;
     std::cout<<"\n============================system online============================\n"<<std::endl;
@@ -25,10 +45,16 @@ void program(){
             std::cout<<"\n+++++++++++++++++++++++\nSorry, we have no available rooms right now"<<std::endl;
         }
         else{
+            char serviceInput;
             std::cout<<"============================="<<std::endl;
             std::cout<<"Booked!\nHere is your info:\n"<<std::endl;
             std::array<std::string, 3> info         = searchClient(People, fullName);
             std::cout<<"Name: "<<info[0]<<"\nYour room number: "<<info[1]<<"\nNights stayed: "<<info[2]<<std::endl;
+            std::cout<<"\nWould you like to add room service y/n"<<std::endl;
+            std::cin>>serviceInput;
+            if(serviceInput == 'y'){
+                setServiceForRoom(std::stoi(info[1]));
+            }
         }
     }
     else if(userinput==2){
