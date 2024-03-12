@@ -34,7 +34,7 @@ public:
     //
     //~hotel_system(); //No destructors needed 
     //
-    std::array<std::string, 2> getRoomInfo(int&); //returns an array of strings size 2
+    std::array<std::string, 2> getRoomInfo(int); //returns an array of strings size 2
     //
     void setRoom(int);
     //
