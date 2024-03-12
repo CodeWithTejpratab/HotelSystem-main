@@ -17,7 +17,7 @@ Hotel_system::      Hotel_system(){//default constructor define
     price2                  = 100;
 }
 
-std::array<std::string, 2>Hotel_system::       getRoomInfo(int& index) {
+std::array<std::string, 2>Hotel_system::       getRoomInfo(int index) {
     std::array<std::string, 2> roomInfo;
     roomInfo[0]             = std::to_string(this->room[index]);
     roomInfo[1]             = std::to_string(this->roomSize[index]);
@@ -90,12 +90,18 @@ void appendClient(Client* &head, std::string name, int roomNumber, int nights){
     }
 }
 
-bool searchClient(Client* head, std::string name){
+std::array<std::string, 3> searchClient(Client* head, std::string name){
+    std::array<std::string, 3> info; 
     while(head){
-        if(head->getFullname() == name){return 1;}
+        if(head->getFullname() == name){
+            info[0]         = head->getFullname();
+            info[1]         = std::to_string(head->getRoomNumber());
+            info[2]         = std::to_string(head->getnights());
+            break;
+        }
         head                = head->next;
     }
-    return 0;
+    return info; 
 }
 //
 //
@@ -107,7 +113,7 @@ bool searchClient(Client* head, std::string name){
         this->poolService[i]        = 0;
         this->publicService[i]      = 0;
     }
-    this->priceRoomService = this->pricePool = this->pricePublicService        = 20;
+    this->priceRoomService = this->pricePool = this->pricePublicService = 20;
  }
 
 bool Service::      getRoomService(int index){
@@ -143,13 +149,13 @@ void Service::          setPoolService(int index){
 }
 
 void Service::          setPublicService(int index){
-    this->publicService[index]        = 1;
+    this->publicService[index]      = 1;
 }
 
 void Service::          resetService(int index){
     this->roomService[index]        = 0;
     this->poolService[index]        = 0;
-    this->publicService[index]       = 0;
+    this->publicService[index]      = 0;
 }
 //
 //
