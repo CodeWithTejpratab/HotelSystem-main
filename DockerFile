@@ -1,0 +1,12 @@
+
+FROM gcc:latest
+
+# Set the working directory in the container
+WORKDIR /usr/src/HotelSystem
+
+# Copy the current directory contents into the container at /usr/src/HotelSystem
+COPY ./ /usr/src/HotelSystem/
+
+RUN g++ -o main main.cpp
+
+CMD ["./main"]
