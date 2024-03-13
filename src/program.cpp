@@ -57,7 +57,7 @@ void program(){
         else{
             char serviceInput;
             std::cout<<"============================="<<std::endl;
-            std::cout<<"Booked!\nHere is your info:\n"<<std::endl;
+            std::cout<<"\nBooked!\nHere is your info:\n"<<std::endl;
             std::array<std::string, 3> info         = searchClient(People, fullName);
             std::cout<<"Name: "<<info[0]<<"\nYour room number: "<<info[1]<<"\nNights stayed: "<<info[2]<<std::endl;
             std::cout<<"\nWould you like to add room service y/n"<<std::endl;
