@@ -17,7 +17,8 @@ int getAvalableRoom(int roomSize){
     return -1;
 }
 
-int bookRoom(int roomSize, int nights, std::string clientName){
+int bookRoom(int roomSize, int nights, 
+             std::string clientName){
     int availableRoom       = getAvalableRoom(roomSize);
     if (availableRoom != -1){
         Hotel.setRoom(availableRoom);
@@ -27,8 +28,38 @@ int bookRoom(int roomSize, int nights, std::string clientName){
     return -1;
 }
 
-void checkoutRoom(int roomNumber){
+void checkoutRoom(int roomNumber){ //This function can be improve, remember to do so
      Hotel.resetRoom(roomNumber);
      Hotel.resetService(roomNumber);
 }
 
+void deleteClient(Client*& head, std::string name){
+    Client *temp                = head;
+    Client *prev                = NULL;
+    bool found = false;
+    if (temp->getFullname() == name){
+        head                    = head->next;
+        delete temp;
+    }
+    else{
+        while (temp){
+            if (temp->getFullname() == name){
+                prev->next      = temp->next;
+                delete temp;
+                break;
+            }
+            prev                = temp;
+            temp                = temp->next;
+        }
+    }
+}
+
+void uploadClientInfoAndDelete(Client*& head, std::string name){ //Upload client info the database and delete client from heap
+    //establish connection to databse
+
+
+    //upload client info
+
+
+    deleteClient(head, name);
+}
